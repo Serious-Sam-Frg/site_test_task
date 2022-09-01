@@ -1,0 +1,180 @@
+// СБРОС СТИЛЕЙ
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+    color: var(--text_on_color1);
+    background: var(--color1)
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  padding: 0;
+  background: none;
+  outline: none;
+  border: 0;
+}
+
+a {
+    text-decoration: none;
+}
+// СБРОС СТИЛЕЙ
+
+
+.hide {
+    display: none !important;
+}
+
+.overflowHidden {
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(0,0,0,.5);
+        z-index: 10;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+body {
+    line-height: 1.2;
+    background: var(--content_bg);
+    font-family: var(--font1);
+    font-weight: var(--font1_400);
+    color: var(--text_on_content_bg);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.block-width {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+.block-padding {
+    padding: 0 20px;
+
+    @media all and (max-width: 639px) {
+        padding: 0 10px;
+    }
+}
+
+h1 {
+    font-weight: var(--font1);
+    font-size: 36px;
+    line-height: 120%;
+    color: var(--text_on_content_bg);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-weight: var(--font1_700);
+
+    @media all and (max-width: 1024px) {
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+
+    @media all and (max-width: 639px) {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.site-wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.site-main {
+    flex: 1 0 auto;
+}
+
+.colored-text {
+    color: var(--color1);
+}
+
+.site-main {
+    position: relative;
+
+    background: url('/images/img/content-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    &__inner {
+        padding: 120px 0 120px;
+
+        @media all and (max-width: 767px) {
+            padding: 100px 0 100px;
+        }
+
+        @media all and (max-width: 639px) {
+            padding: 60px 0 60px;
+        }
+    }
+}
+
+
+*::-webkit-scrollbar {
+    width: 7px;               /* ширина всей полосы прокрутки */
+}
+
+*::-webkit-scrollbar-track {
+    background: #3D4050;        /* цвет зоны отслеживания */
+    border-radius: 20px;       /* округлось бегунка */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--color1);    /* цвет бегунка */
+    border-radius: 20px;       /* округлось бегунка */
+}
+
+
+
+@import "_buttons.scss";
+@import "_header.scss";
+@import "_banner_block.scss";
+@import "_advantage_block.scss";
+@import "_form_block.scss";
+@import "_burger_popup.scss";
+@import "_footer.scss";

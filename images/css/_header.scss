@@ -1,0 +1,115 @@
+.header-block {
+    background: var(--header_bg);
+    color: var(--text_on_header_bg);
+    position: sticky;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 35.5px 0 32.5px;
+
+        @media all and (max-width: 1260px) {
+            padding: 25.5px 0 22.5px;
+        }
+    }
+    &__left {
+        @media all and (max-width: 1260px) {
+            width: calc(100% - 50px);
+        }
+    }
+    &__right {
+    }
+
+    .burger-block {
+        display: none;
+
+        @media all and (max-width: 1260px) {
+            display: block;
+        }
+
+        .burger-btn {
+            display:flex;
+            flex-direction:column;
+            align-items: flex-end;
+            width: 30px;
+            height: 30px;
+            cursor:pointer;
+
+            span {
+                background: #fff;
+                border-radius:10px;
+                height: 5px;
+                margin: 3px 0;
+                transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+            }
+
+            span:nth-of-type(1){
+                width:50%;
+            }
+            span:nth-of-type(2){
+                width:100%;
+            }
+            span:nth-of-type(3){
+                width:75%;
+            }
+
+            &.active {
+                span:nth-of-type(1){
+                    transform-origin:bottom;
+                    transform:rotatez(-45deg) translate(-4px, 1px)
+                }
+                span:nth-of-type(2){
+                    transform-origin:top;
+                    transform:rotatez(45deg)
+                }
+                span:nth-of-type(3){
+                    transform-origin:bottom;
+                    width:50%;
+                    transform: translate(-13px, -6px) rotatez(-45deg);
+                }
+            }
+        }
+    }
+
+    .site-name {
+        color: var(--text_on_header_bg);
+        font-size: 28px;
+        font-family: var(--font2);
+        font-weight: var(--font2_800);
+        text-transform: uppercase;
+        line-height: 1.15;
+    }
+
+    .site-menu {
+        padding-right: 10px;
+
+        @media all and (max-width: 1260px) {
+            display: none;
+        }
+
+        &__list {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            column-gap: 60px;
+
+            a {
+                font-size: 13px;
+                font-weight: var(--font1_700);
+                text-transform: uppercase;
+                line-height: 1.15;
+                color: var(--text_on_header_bg);
+                transition: var(--transition);
+
+                &:hover {
+                    color: var(--color1);
+                }
+            }
+        }
+    }
+}

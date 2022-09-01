@@ -1,0 +1,181 @@
+// Кнопки
+//----------------------------------------------------------------------------//
+
+	// Font-famly кнопок
+	$btnsFontFamily:              		var(--font1);
+	//---------------------------------------------------//
+
+	// Кнопка 1
+	//---------------------------------------------------//
+		// Font weight
+		$btn1Weight: 						var(--font1_400);
+
+		// Text color
+		$btn1ColorDefault:                  var(--text_on_color1);
+		$btn1ColorHover:                    var(--text_on_color1);
+		$btn1ColorActive:                   var(--text_on_color1);
+
+		// Background
+		$btn1BackgroundDefault:             var(--color1);
+		$btn1BackgroundHover:               var(--color1);
+		$btn1BackgroundActive:              var(--color1);
+
+		// Border
+		$btn1BorderDefault:                 inset 0 0 0 1px var(--border_on_color1);
+		$btn1BorderHover:                   inset 0 0 0 1px var(--border_on_color1);
+		$btn1BorderActive:                  inset 0 0 0 1px var(--border_on_color1);
+	//---------------------------------------------------//
+
+
+	// Кнопка 2
+	//---------------------------------------------------//
+		// Font weight
+		$btn2Weight: 						var(--font1_400);
+
+		// Text color
+		$btn2ColorDefault:                  var(--text_on_color2);
+		$btn2ColorHover:                    var(--text_on_color2);
+		$btn2ColorActive:                   var(--text_on_color2);
+
+		// Background
+		$btn2BackgroundDefault:             var(--color2);
+		$btn2BackgroundHover:               var(--color2);
+		$btn2BackgroundActive:              var(--color2);
+
+		// Border
+		$btn2BorderDefault:                 inset 0 0 0 1px var(--border_on_color2);
+		$btn2BorderHover:                   inset 0 0 0 1px var(--border_on_color2);
+		$btn2BorderActive:                  inset 0 0 0 1px var(--border_on_color2);
+	//---------------------------------------------------//
+//----------------------------------------------------------------------------//
+
+
+.btn-style {
+	position: relative;
+	z-index: 1;
+
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+	height: auto;
+	min-height: auto;
+
+	padding: 0;
+
+	background: none;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	background-clip: border-box;
+	transition: var(--transition);
+	text-transform: uppercase;
+
+	border-radius: var(--btn_radius);
+	font-size: 13px;
+	padding: 15px 10px;
+	line-height: 1;
+
+	@media all and (max-width: 639px) {
+		padding: 12px 8px;
+		font-size: 12px;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		transition: var(--transition);
+		opacity: 0;
+		visibility: hidden;
+		border-radius: var(--btn_radius);
+
+		background: var(--btn_overlay_15);
+	}
+
+	&:hover:before {
+		opacity: 1;
+		visibility: visible;
+	}
+	&:active:before {
+		background: var(--btn_overlay_act_05);
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.btn-1,
+.btn-2 {
+	@extend .btn-style;
+}
+
+.btn-1 {
+	font-weight: $btn1Weight;
+	font-family: $btnsFontFamily;
+
+	color: $btn1ColorDefault;
+	box-shadow: $btn1BorderDefault;
+	background: $btn1BackgroundDefault;
+
+	svg {
+		fill: $btn1ColorDefault;
+	}
+
+	&:hover {
+		color: $btn1ColorHover;
+		border: $btn1BorderHover;
+		background: $btn1BackgroundHover;
+
+		svg {
+			fill: $btn1ColorHover;
+		}
+	}
+
+	&:active {
+		color: $btn1ColorActive;
+		border: $btn1BorderActive;
+		background: $btn1BackgroundActive;
+
+		svg {
+			fill: $btn1ColorActive;
+		}
+	}
+}
+
+.btn-2 {
+	font-weight: $btn2Weight;
+	font-family: $btnsFontFamily;
+
+	color: $btn2ColorDefault;
+	box-shadow: $btn2BorderDefault;
+	background: $btn2BackgroundDefault;
+
+	svg {
+		fill: $btn2ColorDefault;
+	}
+
+	&:hover {
+		color: $btn2ColorHover;
+		border: $btn2BorderHover;
+		background: $btn2BackgroundHover;
+
+		svg {
+			fill: $btn2ColorHover;
+		}
+	}
+
+	&:active {
+		color: $btn2ColorActive;
+		border: $btn2BorderActive;
+		background: $btn2BackgroundActive;
+
+		svg {
+			fill: $btn2ColorActive;
+		}
+	}
+}
