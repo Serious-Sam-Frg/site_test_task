@@ -1,5 +1,6 @@
 $(function() {
 
+    // Ползунок
     $(".js-range-slider").ionRangeSlider({
         skin: "round",
         type: "single",
@@ -11,14 +12,7 @@ $(function() {
         extra_classes: "form-slider-range"
     });
 
-    // $(".form-block .form-select select").chosen({
-    //     disable_search_threshold: 100,
-    //     inherit_select_classes: true,
-    //     width: '100%',
-    //     no_results_text: "Упс, ничего не найдено!",
-    //     placeholder_text_single: 'Выберите тип системы',
-    // });
-
+    // Select
     $('select').each(function(){
         var $this = $(this), numberOfOptions = $(this).children('option').length;
 
@@ -67,7 +61,7 @@ $(function() {
         });
     });
 
-
+    // Бургер
     $('.burger-btn').on('click', function(){
         let $this = $(this);
         let $burgerPopup = $('.burger-popup');
@@ -97,6 +91,13 @@ $(function() {
 
             return false;
         };
+    });
+
+
+    $('.banner-block__btn_order').on('click', function() {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $(".form-block").offset().top - 120
+        }, 800);
     });
 
 
