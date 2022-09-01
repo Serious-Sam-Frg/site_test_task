@@ -82,7 +82,7 @@
 
                     b {
                         transition: var(--transition);
-                        background: url(images/img/select-arrow.svg) no-repeat 50% 50%;
+                        background: url(../img/select-arrow.svg) no-repeat 50% 50%;
                     }
                 }
                 .chosen-container-active.chosen-with-drop .chosen-single {
@@ -93,7 +93,7 @@
                     box-shadow: none;
 
                     div b {
-                        background: url(images/img/select-arrow-up.svg) no-repeat 50% 50%;
+                        background: url(../img/select-arrow-up.svg) no-repeat 50% 50%;
                         transform: rotate(180deg);
                     }
                 }
