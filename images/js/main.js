@@ -102,4 +102,5 @@ $(function() {
 
 
     $('body').removeClass('onload-styles');
+    $('head').find('link#first_styles').remove();
 });
