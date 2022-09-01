@@ -154,7 +154,7 @@ h1 {
 
 .site-main {
   position: relative;
-  background: url("/images/img/content-bg.png");
+  background: url("images/img/content-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -790,7 +790,7 @@ h1 {
   position: absolute;
   top: 50px;
   left: 81%;
-  background: url(/images/img/dots.svg);
+  background: url(images/img/dots.svg);
   width: 110px;
   height: 6px;
   z-index: -1;
@@ -1009,7 +1009,7 @@ h1 {
 .form-block form .form-item.form-select .chosen-container-single .chosen-single div b {
   -webkit-transition: var(--transition);
   transition: var(--transition);
-  background: url(/images/img/select-arrow.svg) no-repeat 50% 50%;
+  background: url(images/img/select-arrow.svg) no-repeat 50% 50%;
 }
 
 .form-block form .form-item.form-select .chosen-container-active.chosen-with-drop .chosen-single {
@@ -1022,7 +1022,7 @@ h1 {
 }
 
 .form-block form .form-item.form-select .chosen-container-active.chosen-with-drop .chosen-single div b {
-  background: url(/images/img/select-arrow-up.svg) no-repeat 50% 50%;
+  background: url(images/img/select-arrow-up.svg) no-repeat 50% 50%;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
