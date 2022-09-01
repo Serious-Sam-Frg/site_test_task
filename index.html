@@ -6,8 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoremIpsum.Net</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    {literal}
+	    <style>
+            .onload-styles .burger-popup {
+                display: none !important;
+            }
+        </style>
+    {/literal}
 </head>
-<body>
+<body class="onload-styles">
     <div class="site-wrapper">
         <header class="header-block block-padding">
             <div class="header-block__inner block-width">
@@ -120,8 +128,8 @@
                     <div class="form-block__inner">
                         <form action="" method="post">
                             <div class="form-item form-select">
-                                <select name="form-select" data-placeholder="Выберите тип системы">
-                                    <option value=""></option>
+                                <select name="system_type" data-placeholder="Выберите тип системы">
+                                    <option value="hide" disabled>Выберите тип системы</option>
                                     <option value="Sed ut perspiciatis">Sed ut perspiciatis</option>
                                     <option value="Nemo enim ipsam">Nemo enim ipsam</option>
                                     <option value="Et harum quidem">Et harum quidem</option>
@@ -249,18 +257,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Raleway:wght@800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="images/css/plugins/ion.rangeSlider.min.css">
-    <link rel="stylesheet" href="images/css/plugins/chosen.min.css">
     <link rel="stylesheet" href="images/css/colors.css">
     <link rel="stylesheet" href="images/css/styles.css">
 
     <script src="images/js/plugins/ion.rangeSlider.min.js"></script>
-    <script src="images/js/plugins/chosen.jquery.min.js"></script>
     <script src="images/js/main.js"></script>
 
     <div class="sprite hide">
-        <!-- <svg class="icon">
-            <use xlink:href="#social-2"></use>
-        </svg> -->
         <svg width="0" height="0" class="hidden">
             <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" id="advantage-icon-1">
               <path d="M23.9286 14.9286C23.9286 19.8906 19.8906 23.9286 14.9286 23.9286C9.96651 23.9286 5.92856 19.8906 5.92856 14.9286C5.92856 9.96651 9.96651 5.92856 14.9286 5.92856C19.8906 5.92856 23.9286 9.96651 23.9286 14.9286ZM34.2143 31.6429C34.2143 30.9598 33.933 30.2969 33.471 29.8348L26.5803 22.9442C28.2076 20.5937 29.0714 17.7812 29.0714 14.9286C29.0714 7.11383 22.7433 0.785706 14.9286 0.785706C7.11383 0.785706 0.785706 7.11383 0.785706 14.9286C0.785706 22.7433 7.11383 29.0714 14.9286 29.0714C17.7812 29.0714 20.5937 28.2076 22.9442 26.5803L29.8348 33.4509C30.2969 33.933 30.9598 34.2143 31.6429 34.2143C33.0491 34.2143 34.2143 33.0491 34.2143 31.6429Z"></path>

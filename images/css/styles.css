@@ -956,8 +956,7 @@ h1 {
 }
 
 .form-block form .form-item input,
-.form-block form .form-item select,
-.form-block form .form-item .chosen-container-single .chosen-single {
+.form-block form .form-item select {
   border-radius: var(--form_radius);
   background: rgba(255, 255, 255, 0.85);
   border: 1px solid #FFFFFF;
@@ -971,48 +970,92 @@ h1 {
 
 @media all and (max-width: 767px) {
   .form-block form .form-item input,
-  .form-block form .form-item select,
-  .form-block form .form-item .chosen-container-single .chosen-single {
+  .form-block form .form-item select {
     font-size: 16px;
   }
 }
 
 .form-block form .form-item input::-webkit-input-placeholder,
-.form-block form .form-item select::-webkit-input-placeholder,
-.form-block form .form-item .chosen-container-single .chosen-single::-webkit-input-placeholder {
+.form-block form .form-item select::-webkit-input-placeholder {
   color: #272733;
 }
 
 .form-block form .form-item input:-ms-input-placeholder,
-.form-block form .form-item select:-ms-input-placeholder,
-.form-block form .form-item .chosen-container-single .chosen-single:-ms-input-placeholder {
+.form-block form .form-item select:-ms-input-placeholder {
   color: #272733;
 }
 
 .form-block form .form-item input::-ms-input-placeholder,
-.form-block form .form-item select::-ms-input-placeholder,
-.form-block form .form-item .chosen-container-single .chosen-single::-ms-input-placeholder {
+.form-block form .form-item select::-ms-input-placeholder {
   color: #272733;
 }
 
 .form-block form .form-item input::placeholder,
-.form-block form .form-item select::placeholder,
-.form-block form .form-item .chosen-container-single .chosen-single::placeholder {
+.form-block form .form-item select::placeholder {
   color: #272733;
 }
 
-.form-block form .form-item.form-select .chosen-container-single .chosen-single div {
-  width: 20px;
-  right: 10px;
+.form-block form .form-item.form-select .select-hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
-.form-block form .form-item.form-select .chosen-container-single .chosen-single div b {
+.form-block form .form-item.form-select .select-styled {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 8px 15px;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+  border-radius: var(--form_radius);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #FFFFFF;
+  padding: 11px 10px;
+  font-weight: var(--font1_400);
+  font-size: 18px;
+  color: #272733;
+  line-height: 1.35;
+  min-height: 48px;
+}
+
+@media all and (max-width: 767px) {
+  .form-block form .form-item.form-select .select-styled {
+    font-size: 16px;
+  }
+}
+
+.form-block form .form-item.form-select .select-styled::-webkit-input-placeholder {
+  color: #272733;
+}
+
+.form-block form .form-item.form-select .select-styled:-ms-input-placeholder {
+  color: #272733;
+}
+
+.form-block form .form-item.form-select .select-styled::-ms-input-placeholder {
+  color: #272733;
+}
+
+.form-block form .form-item.form-select .select-styled::placeholder {
+  color: #272733;
+}
+
+.form-block form .form-item.form-select .select-styled:after {
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  width: 20px;
+  position: absolute;
   -webkit-transition: var(--transition);
   transition: var(--transition);
   background: url(../img/select-arrow.svg) no-repeat 50% 50%;
 }
 
-.form-block form .form-item.form-select .chosen-container-active.chosen-with-drop .chosen-single {
+.form-block form .form-item.form-select .select-styled.active {
   background: rgba(61, 64, 80, 0.85);
   border-radius: 3px 3px 0px 0px;
   color: var(--text_on_content_bg);
@@ -1021,34 +1064,47 @@ h1 {
           box-shadow: none;
 }
 
-.form-block form .form-item.form-select .chosen-container-active.chosen-with-drop .chosen-single div b {
+.form-block form .form-item.form-select .select-styled.active:after {
   background: url(../img/select-arrow-up.svg) no-repeat 50% 50%;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
-.form-block form .form-item.form-select .chosen-container .chosen-drop {
+.form-block form .form-item.form-select .select-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  list-style: none;
   background: #272733;
   border: 1px solid #3D4050;
   border-radius: 3px;
-}
-
-.form-block form .form-item.form-select .chosen-container .chosen-results {
   max-height: 180px;
-  padding: 9px 0 0 4px;
+  padding: 10px 0 10px 10px;
   margin: 0;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
-.form-block form .form-item.form-select .chosen-container .chosen-results li {
+.form-block form .form-item.form-select .select-options li {
   font-weight: var(--font1_400);
+  cursor: pointer;
   font-size: 18px;
   color: var(--text_on_content_bg);
-  margin-bottom: 9px;
+  margin-bottom: 12px;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
 }
 
-.form-block form .form-item.form-select .chosen-container .chosen-results li.highlighted {
+.form-block form .form-item.form-select .select-options li:hover, .form-block form .form-item.form-select .select-options li.is-selected {
   color: var(--color1);
   background: none;
+}
+
+.form-block form .form-item.form-select .select-options li[rel="hide"] {
+  display: none;
 }
 
 @media all and (min-width: 768px) {
